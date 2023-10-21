@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class LogMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,8 +15,18 @@ class LogMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        info($request->all());
+        if($this->isAdmin($request)){
 
-        return $next($request);
+            return $next($request);
+
+        }
+
+        abort(403);
+
+    }
+    protected function isAdmin(Request $request){
+
+         return false; //$request->user()->admin;
+
     }
 }

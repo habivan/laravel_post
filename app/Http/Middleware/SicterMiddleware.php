@@ -6,17 +6,23 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class LogMiddleware
+class SicterMiddleware
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $s): Response
     {
-        info($request->all());
 
-        return $next($request);
+        if($request->input('tok')===$s){
+
+            return $next($request);
+        }
+
+        abort(403);
+
     }
+
 }
