@@ -9,6 +9,6 @@ use App\Http\Controllers\Controller;
 class LoginController extends Controller
 {
     public function index(){
-        return 'login';
+        return view('login.index');
     }
 }

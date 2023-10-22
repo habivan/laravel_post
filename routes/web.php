@@ -16,9 +16,12 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::middleware('tok:sic')->get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {
+    return view('home.index');
+})->name('home');
+// Route::middleware('tok:sic')->get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::middleware('guest')->group(function(){
 
