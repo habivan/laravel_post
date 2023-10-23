@@ -2,7 +2,10 @@
 
 
     @section('content')
-        <h1>
-            Просмотр поста
+        <a href="{{route('blog')}}">Назад</a>
+        <h1 class="mb-5">
+            {{$post->title}}
         </h1>
-    @endsection
+        <p>{{$post->text}}</p>
+
+@endsection

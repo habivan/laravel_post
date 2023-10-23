@@ -1,7 +1,6 @@
 <header class="py-3 border-buttom">
     <div class="d-flex justify-content-between">
-        <div class="container">
-
+        <div class="container d-flex justify-content-between">
             <div>
                 <ul class="list-unstyled d-flex">
                     <li class="me-3">
