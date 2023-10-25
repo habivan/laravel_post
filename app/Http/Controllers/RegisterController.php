@@ -9,7 +9,8 @@ class RegisterController extends Controller
     public function index(){
         return view('register.index');
     }
-    public function store(){
+    public function store(Request $request){
+        dd($request->all());
         return 'ok';
     }
 }

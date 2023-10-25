@@ -33,7 +33,7 @@
                         <x-input type="password" name="password_confirmation"/>
                     </x-form-itam>
                     <x-form-itam class="mb-3">
-                        <x-checkbox type="checkbox" name="remember">
+                        <x-checkbox type="checkbox" name="agreement">
                             {{__('Я согласен на обработку данных')}}
                         </x-checkbox>
                     </x-form-itam>
