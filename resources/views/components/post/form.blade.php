@@ -10,6 +10,6 @@
         <x-trix name="contect" value="{{$post->text ?? ''}}" />
     </x-form-itam>
     <x-button type="submit">
-        {{__('Создать пост')}}
+        {{$slot}}
     </x-button>
 </x-form>

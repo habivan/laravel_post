@@ -11,7 +11,7 @@
                 </a>
             </x-slot>
         </x-title>
-        <x-post.form action="{{route('user.posts.update', $post->id)}}" method="PUT" :post='$post' />
+        <x-post.form action="{{route('user.posts.update', $post->id)}}" method="PUT" :post='$post'>{{__('Изменить пост')}}</x-post.form>
     @endsection
 
 

@@ -9,10 +9,16 @@ use App\Http\Controllers\Controller;
 class LoginController extends Controller
 {
     public function index(){
+
         return view('login.index');
     }
 
     public function store(){
-        return ;
+
+        alert('Добро пожаловать');
+        // if(true){
+        //     return redirect()->back()->withInput();
+        // }
+        return redirect()->route('user.posts');
     }
 }

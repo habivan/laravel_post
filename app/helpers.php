@@ -14,3 +14,9 @@ if(! function_exists('active_link')){
         return Route::is($name) ? $class : '';
     }
 }
+
+if(! function_exists('alert')){
+    function alert($text){
+        session(['alert' => $text]);
+    }
+}

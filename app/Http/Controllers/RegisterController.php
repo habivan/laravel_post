@@ -10,7 +10,9 @@ class RegisterController extends Controller
         return view('register.index');
     }
     public function store(Request $request){
-        dd($request->all());
+        if(true){
+            return redirect()->back()->withInput();
+        }
         return 'ok';
     }
 }

@@ -18,11 +18,11 @@
                 <x-form action="{{route('register.store')}}" method="POST">
                     <x-form-itam class="mb-3">
                         <x-label required>{{__('Email')}}</x-label>
-                        <x-input autofocus type="email" name="email"/>
+                        <x-input autofocus type="email" name="email" />
                     </x-form-itam>
                     <x-form-itam class="mb-3">
                         <x-label required>{{__('Имя')}}</x-label>
-                        <x-input autofocus type="name" name="name"/>
+                        <x-input autofocus type="name" name="name" />
                     </x-form-itam>
                     <x-form-itam class="mb-3">
                         <x-label class="required" >{{__('Пороль')}}</x-label>

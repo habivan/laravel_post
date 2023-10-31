@@ -8,6 +8,12 @@ use App\Http\Controllers\Controller;
 class PostController extends Controller
 {
     public function index(Request $request){
+        $post =(object) [
+            'id' => 2,
+            'title'=>'Lorem ipsum',
+            'text'=>'<strong>Lorem</strong> ipsum dolor sit, amet consectetur adipisicing elit. <i>Consequatur</i> repudiandae vero velit nesciunt quas debitis eos deleniti repellendus explicabo voluptate.',
+        ];
+        $posts = array_fill(0,10,$post);
 
         return view('blog.index', compact('posts'));
     }
@@ -18,7 +24,9 @@ class PostController extends Controller
     }
 
     public function store(){
-        return 'ok';
+        alert(__('Сохранено'));
+
+        return redirect()->route('user.posts.show', 2);
     }
 
     public function show($post){
@@ -27,6 +35,9 @@ class PostController extends Controller
             'title'=>'Lorem ipsum',
             'text'=>'<strong>Lorem</strong> ipsum dolor sit, amet consectetur adipisicing elit. <i>Consequatur</i> repudiandae vero velit nesciunt quas debitis eos deleniti repellendus explicabo voluptate.',
         ];
+
+        alert(__('Изменено'));
+
         return view("user.posts.show", compact('post'));
     }
 
@@ -36,12 +47,14 @@ class PostController extends Controller
             'title'=>'Lorem ipsum',
             'text'=>'<strong>Lorem</strong> ipsum dolor sit, amet consectetur adipisicing elit. <i>Consequatur</i> repudiandae vero velit nesciunt quas debitis eos deleniti repellendus explicabo voluptate.',
         ];
+
+        alert(__('Изменено'));
         return view("user.posts.edit", compact('post'));
     }
 
     public function update(Request $request){
-        dd($request->all());
-        return 'ok';
+
+        return redirect()->route('user.posts');
     }
 
     public function delete(){
